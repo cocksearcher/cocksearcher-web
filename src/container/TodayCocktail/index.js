@@ -1,27 +1,36 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Emotions from "../../components/Emotions";
+import Recommend from "../../components/Recommend";
 import Shaker from "../../components/Shaker";
 import { EMOTIONS } from "../../constant";
 import * as S from "./styles";
 
 const TodayCocktailContainer = () => {
   const [countEmotion, setCountEmotion] = useState(EMOTIONS);
+  const [isNext, setIsNext] = useState(false);
 
   return (
-    <div>
-      <S.Outer>
-        <Shaker countEmotion={countEmotion}></Shaker>
-        <S.EmotionBox>
-          {EMOTIONS.map((emotion) => (
-            <Emotions
-              key={emotion.id}
-              emotionText={emotion.emotion}
-              setCountEmotion={setCountEmotion}
-            ></Emotions>
-          ))}
-        </S.EmotionBox>
-      </S.Outer>
-    </div>
+    <S.Outer>
+      {!isNext ? (
+        <div>
+          <Shaker countEmotion={countEmotion}></Shaker>
+          <S.NextLevel onClick={() => setIsNext(!isNext)}>
+            칵테일 제조
+          </S.NextLevel>
+          <S.EmotionBox>
+            {EMOTIONS.map((emotion) => (
+              <Emotions
+                key={emotion.id}
+                emotionText={emotion.emotion}
+                setCountEmotion={setCountEmotion}
+              ></Emotions>
+            ))}
+          </S.EmotionBox>
+        </div>
+      ) : (
+        <Recommend countEmotion={countEmotion} />
+      )}
+    </S.Outer>
   );
 };
 
