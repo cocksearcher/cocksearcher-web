@@ -1,19 +1,27 @@
-export const EMOTIONS = [
+export let EMOTIONS = [
   {
     id: 1,
     emotion: "😃",
+    count: 0,
   },
   {
     id: 2,
-    emotion: "🙁",
+    emotion: "🤗",
+    count: 0,
   },
   {
     id: 3,
-    emotion: "😥",
+    emotion: "🤤",
+    count: 0,
   },
   {
     id: 4,
-    emotion: "😡",
+    emotion: "😥",
+    count: 0,
   },
-  { id: 5, emotion: "🙄" },
+  {
+    id: 5,
+    emotion: "😡",
+    count: 0,
+  },
 ];

@@ -1,10 +1,12 @@
 import styled, { keyframes, css } from "styled-components";
 
 const putInAnimation = keyframes`
-  0% { top: -1px; }
-  30% {top: -20px}
-  50% { top: -30px; }
-  100% { top: -500px;}
+  0% { top: -10px; perspective: 400px; transform: rotateY(360deg) }
+  10% {top: -30px;}
+  20% { top: -40px;}
+  30% {top: -60px}
+  40% { top: -100px; }
+  70% { display:none;}
 `;
 
 export const Emotion = styled.div`
@@ -19,7 +21,7 @@ export const Emotion = styled.div`
     props.isClick &&
     css`
       animation-name: ${putInAnimation};
-      animation-duration: 3s;
+      animation-duration: .5s;
       animation-fill-mode: forwards;
     `}
 `;

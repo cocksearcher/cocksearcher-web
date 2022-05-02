@@ -5,12 +5,13 @@ export const CupBox = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 100px;
 `
 
 export const ShakerCup = styled.img`
-  width: 150px;
+  width: 250px;
 `;
 
 export const WhiteShakerCup = styled.img`
-  width: 150px;
+  width: 250px;
 `;
