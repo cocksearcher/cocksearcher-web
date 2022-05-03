@@ -1,8 +1,7 @@
 import { useState } from "react";
 import * as S from "./styles";
-import { EMOTIONS } from "../../constant";
 
-const Emotions = ({ emotionText, setCountEmotion }) => {
+const Emotions = ({ countEmotion, emotionText, setCountEmotion }) => {
   const [isClick, setisClick] = useState(false);
   const [count, setCount] = useState(0);
 
@@ -13,11 +12,13 @@ const Emotions = ({ emotionText, setCountEmotion }) => {
       setisClick(false);
     }, 500);
 
-    setCount(count => count+1);
+    setCount((count) => count + 1);
 
     setCountEmotion(
-      EMOTIONS.map((emotion) =>
-        emotion.emotion === emotionText ? { ...emotion, count: count } : emotion
+      countEmotion.map((emotion) =>
+        emotion.emotion === emotionText
+          ? { ...emotion, count: count }
+          : emotion
       )
     );
   };

@@ -21,6 +21,7 @@ const TodayCocktailContainer = () => {
             {EMOTIONS.map((emotion) => (
               <Emotions
                 key={emotion.id}
+                countEmotion={countEmotion}
                 emotionText={emotion.emotion}
                 setCountEmotion={setCountEmotion}
               ></Emotions>

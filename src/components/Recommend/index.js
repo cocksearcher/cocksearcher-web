@@ -5,11 +5,11 @@ const Recommend = ({ countEmotion }) => {
   useEffect(() => {
     const req = async () => {
       const emotionObj = {
-        happy: 1,
-        exciting: 4,
-        hungry: 2,
-        sad: 6,
-        angry: 3,
+        happy: 0,
+        exciting: 0,
+        hungry: 0,
+        sad: 0,
+        angry: 0,
       };
 
       const params = Object.keys(emotionObj).map(
